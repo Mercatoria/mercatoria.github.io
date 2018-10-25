@@ -13,11 +13,34 @@
         font-family: 'Lato', sans-serif;
       }
 
-      .flex-container {
+      .vert-container {
         display: flex;
         flex-direction: column;
         justify-content: space-around;
-        height: 75%;
+        height: 90%;
+      }
+
+      .horiz-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+      }
+
+      .content {
+        width: 80%;
+        max-width: 540px;
+      }
+
+      .header {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+      @media (max-width: 560px) {
+        .header {
+          display: block;
+          text-align: center;
+        }
       }
 
       #mercatoria, #coming-soon {
@@ -25,13 +48,22 @@
       }
 
       #mercatoria {
-        font-size: 4em;
+        font-size: 3.5em;
+        margin-top: 0;
+      }
+      @media (max-width: 320px) {
+        #mercatoria {
+          font-size: 2.5em;
+        }
+      }
+
+      #logo {
+        width: 100px;
+        height: 100px;
+        margin-top: 4px;
       }
 
       #wei-quote {
-        width: 70%;
-        max-width: 575px;
-        margin: auto;
         margin-top: 48px;
       }
 
@@ -47,24 +79,29 @@
     </style>
   </head>
   <body>
-    <div class="flex-container">
-      <div>
-        <div class="center">
-          <h1 id="mercatoria">
-            Mercatoria
-          </h1>
-          <h2 id="coming-soon">
-            Coming Soon
-          </h2>
-        </div>
-        <div id="wei-quote">
-          <div>
-            "Mercatoria uses pseudorandom assignment and locality of state to
-            achieve arbitrary scalability and true decentralization for its
-            payment processing and smart contracts."
+    <div class="vert-container">
+      <div class="horiz-container">
+        <div class="content">
+          <div class='header'>
+            <div>
+              <h1 id="mercatoria">
+                Mercatoria
+              </h1>
+              <h2 id="coming-soon">
+                Coming Soon
+              </h2>
+            </div>
+            <img id="logo" src="./logo.svg">
           </div>
-          <div id="wei-attribution">
-            Wei Dai, cofounder
+          <div id="wei-quote">
+            <div>
+              "Mercatoria uses pseudorandom assignment and locality of state to
+              achieve arbitrary scalability and true decentralization for its
+              payment processing and smart contracts."
+            </div>
+            <div id="wei-attribution">
+              Wei Dai, cofounder
+            </div>
           </div>
         </div>
       </div>
