@@ -1,52 +1,69 @@
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
-    <title>Mercatoria</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Lekton" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <link rel="shortcut icon" type="image/png" href="/favicon.png">
-  </head>
-  <body style="
-    font-family: 'Lato', sans-serif;
-    ">
 
-    <div style="
-      display: flex;
-      flex-direction: column;
-      justify-content: space-around;
-      height: 75%;
-      ">
+    <title>Mercatoria</title>
+
+    <style>
+      body {
+        font-family: 'Lato', sans-serif;
+      }
+
+      .flex-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        height: 75%;
+      }
+
+      #mercatoria, #coming-soon {
+        font-family: 'Lekton', sans-serif;
+      }
+
+      #mercatoria {
+        font-size: 4em;
+      }
+
+      #wei-quote {
+        width: 70%;
+        max-width: 575px;
+        margin: auto;
+        margin-top: 48px;
+      }
+
+      #wei-attribution {
+        font-style: italic;
+        text-align: right;
+        margin-top: 6px;
+      }
+
+      .center {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flex-container">
       <div>
-        <div style="text-align: center;">
-          <h1 id="mercatoria" style="
-            font-family: 'Lekton', sans-serif;
-            font-size: 4em;
-            ">
+        <div class="center">
+          <h1 id="mercatoria">
             Mercatoria
           </h1>
-          <h2 id="coming-soon" style="
-            font-family: 'Lekton', sans-serif;
-            ">
+          <h2 id="coming-soon">
             Coming Soon
           </h2>
         </div>
-        <div style="
-          width: 70%;
-          max-width: 575px;
-          margin: auto;
-          margin-top: 48px;
-          ">
+        <div id="wei-quote">
           <div>
             "Mercatoria uses pseudorandom assignment and locality of state to
             achieve arbitrary scalability and true decentralization for its
             payment processing and smart contracts."
           </div>
-          <div style="
-            font-style: italic;
-            text-align: right;
-            margin-top: 6px;
-            ">
+          <div id="wei-attribution">
             Wei Dai, cofounder
           </div>
         </div>
