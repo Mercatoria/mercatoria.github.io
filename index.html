@@ -13,6 +13,11 @@
         font-family: 'Lato', sans-serif;
       }
 
+      a {
+        text-decoration: none;
+        color: #18c;
+      }
+
       .vert-container {
         display: flex;
         flex-direction: column;
@@ -35,6 +40,7 @@
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
+        margin-bottom: 24px;
       }
       @media (max-width: 560px) {
         .header {
@@ -45,6 +51,7 @@
 
       #mercatoria, #coming-soon {
         font-family: 'Lekton', sans-serif;
+        margin-bottom: 16px;
       }
 
       #mercatoria {
@@ -57,14 +64,22 @@
         }
       }
 
+      #contact-email {
+        display: block;
+      }
+      @media (max-width: 560px) {
+        #contact-email {
+          margin-bottom: 24px;
+        }
+      }
+
       #logo {
         width: 100px;
         height: 100px;
-        margin-top: 4px;
       }
 
       #wei-quote {
-        margin-top: 48px;
+        margin-top: 36px;
       }
 
       #wei-attribution {
@@ -90,9 +105,14 @@
               <h2 id="coming-soon">
                 Coming Soon
               </h2>
+              <a href="mailto:contact@mercatoria.io"
+                id="contact-email">
+                contact@mercatoria.io
+              </a>
             </div>
             <img id="logo" src="./logo.svg">
           </div>
+
           <div id="wei-quote">
             <div>
               "Mercatoria uses pseudorandom assignment and locality of state to
