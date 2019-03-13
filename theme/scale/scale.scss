@@ -1,0 +1,130 @@
+@import "../../static/css/colors.scss";
+
+/* slider rules */
+.slider-container {
+  /* stick to top */
+  position: sticky;
+  z-index: 100;
+  top: 1em;
+  
+  /* text appearance */
+  font-size: 12pt;
+  font-weight: bold;
+  color: $text_light; 
+
+  background-color: rgba(0, 0, 0, 0.55);
+  border-radius: 15px;
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: .5em;
+  padding-bottom: .5em;
+
+  /* slider styling */
+  $thumb_border_radius: 3px;
+  $thumb_height: 36px;
+  $thumb_width: 25px;
+
+  input[type=range] {
+    -webkit-appearance: none;
+    width: 80%;
+    margin: 20px;
+  }
+
+  /* Chrome and Webkit (tested on Epiphany but not Safari) */
+  input[type=range]::-webkit-slider-runnable-track {
+    height: 9px;
+    background: $primary_color;
+  }
+
+  input[type=range]::-webkit-slider-thumb {
+    height: $thumb_height;
+    width: $thumb_width;
+    border-radius: $thumb_border_radius;
+    background: $text_light;
+    -webkit-appearance: none;
+    /* The thumb won't be vertically centered without this */
+    margin-top: -14px;
+  }
+
+  /* If this rule isn't here horizontal scroll happens on mobile. No, I don't know why. */
+  input[type=range]:focus::-webkit-slider-runnable-track {
+    background: $primary_color;
+  }
+
+
+  /* Firefox */
+  input[type=range]::-moz-range-track {
+    /* This height needs to be larger otherwise
+    there's an unpleasant white border on Firefox. */
+    height: 22px;
+    background: $primary_color;
+  }
+
+  input[type=range]::-moz-range-thumb {
+    height: $thumb_height;
+    width: $thumb_width;
+    border-radius: $thumb_border_radius;
+    background: $text_light;
+  }
+
+  input[type=range]::-moz-focus-outer {
+    border: 0;
+  }
+
+}
+
+
+#bitcoin, #ethereum {
+  /* maps jitter if we don't set a max-width */
+  max-width: 405px;
+}
+
+.payment-label {
+ display: flex;
+ align-items: center;
+
+ img {
+  padding-right: 5px;
+ }
+}
+
+.population-support {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+
+  img {
+    padding-right: 3px;
+  }
+}
+
+.small-payment-method-maps {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+  .payment-method {
+    margin: 0 24px;
+  }
+}
+
+.payment-method {
+  padding-bottom: 16px;
+  min-width: 300px;
+  flex-grow: 1;
+}
+
+
+#lex_anim {
+  margin-bottom: 1rem;
+}
+
+.map{
+  z-index: -1 !important;
+  height: 75vh;
+  margin: auto;         
+}
+
+

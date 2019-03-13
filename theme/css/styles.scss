@@ -1,0 +1,332 @@
+@import "colors";
+@import "fonts";
+
+/* layout stuff */
+$footer_height: 200px;
+$header_item_padding: 20px; 
+
+/* page wide settings */
+html {
+  text-rendering: optimizeLegibility;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: $primary_color;
+  text-decoration: none;
+}
+
+/* for important text */ 
+h1, h2, h3 {
+  word-wrap: break-word;
+}
+
+h1{
+  font-weight: bold;
+  font-family: $font_title;
+  font-size: 1.6em;
+}
+
+h2, h3 {
+  font-family: $font_fancy;
+}
+
+h3 {
+  font-size: 1.2rem;
+}
+
+/* set default font */
+body {
+  font-family: $font-stack;
+  color: $text_dark;
+  background: $background_color;
+}
+
+/* code blocks */
+.codehilite {
+  width: 80%;
+  overflow: auto;
+  /* overriding default codehilite inline styles */
+  background: $special_bg_color !important;
+  padding: 12px;
+  margin: auto;
+  pre {
+    font-family: $font_mono;
+    font-size: 10pt;
+    margin: 0 auto;
+  }
+}
+
+.jump-to-top {
+  display: none;
+}
+
+/* TODO make text inputs default to ~200px to 
+ * make proportions more balanced? */
+input[type=text], input[type=email] {
+  border: 1px solid black;
+  font-size: 1em;
+  height: 2.5em;
+  padding-left: 8px;
+}
+
+/* buttons */
+.button, .primary-button, .secondary-button {
+  display: inline-block;
+  color: $text_dark;
+  padding: .5em;
+  margin: .5em; /* TODO causes weird alignment when wrapping, consider removing */
+  border-radius: 4px;
+  font-size: 1em;
+  font-weight: bold;
+  font-family: $font_fancy;
+  white-space: nowrap;
+}
+
+.primary-button {
+  border: 3px solid $primary_color;
+  background-color: $primary_color_50;
+}
+
+.secondary-button {
+  border: 3px solid $secondary_color;
+  background-color: $secondary_color_50;
+}
+
+/* success and warning alerts */
+.alert {
+  margin: 10px 0px;
+  padding: 12px;
+  width: -moz-fit-content;
+  width: -webkit-fit-content;
+  width: fit-content;
+}
+
+.success {
+  @extend .alert;
+  color: #4F8A10;
+  font-style: italic;
+  background-color: #DFF2BF;
+}
+
+.warning {
+  @extend .alert;
+  color: #9F6000;
+  font-weight: bold;
+  background-color: #FEEFB3;
+}
+
+/* keeps the footer at the bottom */
+.wrapper {
+  min-height: calc(99vh - #{$footer_height});
+}
+
+/* nav menu */
+#menu {
+  border-bottom: 2px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  font-size: 1.2em; 
+  font-family: $font_fancy;
+  font-weight: bold;
+
+  /* no san (i.e., hamburger) menu */
+  label, #san { 
+    display: none;
+  }
+
+  ul {
+    padding: 0;
+    display: flex;
+    list-style: none;
+    li {
+      padding: $header_item_padding;
+    }
+  } 
+}
+
+.headline-box {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  .logo {
+    height: 60px;
+  }
+  .name {
+    /* necessary because the font is weird */
+    $name_size: 3rem;
+    font-size: $name_size;
+    max-height: $name_size;
+
+    font-family: $font_title;
+    margin-left: 30px;
+  }
+  font-family: $font_fancy;
+}
+
+section {
+  margin-bottom: 2rem;
+}
+
+.section2 {
+  margin-bottom: 3rem;
+}
+
+.section2 > p, .section3 {
+  margin-left: 1em;
+}
+
+/* content container */
+main {
+  max-width: 50em;
+  padding: 1em;
+  padding-bottom: 2em;
+  margin: auto;
+  text-align: left;
+
+  ul {
+    list-style: square;
+  }
+
+  p {
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+  }
+}
+
+
+/* footer */
+footer {
+  border-top: 2px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: $text_dark;
+  height: $footer_height;
+  padding: 0 4%;
+
+  ul {
+    vertical-align: top;
+    list-style: none;
+    display: inline-block;
+    margin-right: 2em;
+  }
+
+}
+
+.logo-box {
+  text-align: center;
+  padding-top: 8px;
+
+  .logo {
+    height: 60px;
+  }
+
+  p {
+    margin: .4em;
+  }
+}
+
+.footer-lists {
+  li {
+    strong {
+      font-family: $font_fancy;
+    }
+    margin: .5em;
+  }
+}
+
+
+/* TODO label this media query coorectly */
+/* mobile styles */
+@media screen and (max-width: 900px){
+  #headline-and-san {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  #menu {
+    display: block;
+    padding: 0;
+
+    /* show san */
+    label { 
+      display: block;
+      padding-right: 30px;
+      padding-bottom: 1px;
+    }
+
+    .headline-box {
+      padding: 20px;
+
+      img {
+        height: 50px;
+      }
+    }
+
+    .name {
+      margin-left: 16px;
+      $name_size_mobile: 1.8rem;
+      font-size: $name_size_mobile;
+      max-height: $name_size_mobile;
+    }
+
+    /* vertical menu */
+    ul li {
+      display: block;
+      border-top: 1px solid;
+      padding: 0px;
+
+      a {
+        display: block;
+        padding: 20px;
+      }
+    }
+
+
+    /* show-hide on click */
+    ul {
+      margin: 0;
+      display: block;
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height 150ms ease-in;
+    }
+
+
+    input:checked ~ ul {
+      max-height: 500px;
+      transition: max-height 250ms ease-in;
+    }
+
+  }
+
+  /* jump-to-top link for long articles */
+  .jump-to-top {
+    display: block;
+    text-align: right;
+  }
+
+  .footer-lists {
+    display: none;
+  }
+
+  footer {
+    justify-content: center;
+  }
+}
+
+
+/* small phone styles */
+@media screen and (max-width: 400px){
+  .codehilite {
+    width: auto;
+  }
+}

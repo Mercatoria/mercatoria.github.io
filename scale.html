@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- preconnect to Google analytics and fonts -->
+    <link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png" href="/theme/images/favicon.png">
+    <link rel="stylesheet" type="text/css" href="/theme/css/styles.css" />
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <!-- We feel bad about including analytics scripts but we're afraid of getting hit by traffic we don't understand -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-128423492-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-128423492-1');
+    </script>
+    <meta name="google-site-verification" content="h0IeWQ5uuuYnF1tFoGj4CUR5KNAdmQ1j9OkhHbV_4BE"/>
+    <meta name="description" content="between transactions Bitcoin Population Support: Ethereum Population Support: EOS Population Support: Visa Population Support: Mercatoria Population Support:"/>
+
+    <title>Mercatoria · Scalability</title>
+
+
+
+
+    <link rel="stylesheet" type="text/css" href="/theme/scale/scale.css?e2532c8c">
+
+    <!-- style sheet for map source -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
+                           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+                           crossorigin=""/>
+
+    <script defer 
+            src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
+            integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
+            crossorigin=""></script>
+    <script defer 
+            src="https://d3js.org/topojson.v1.min.js"></script>
+    <script defer 
+            src="https://d3js.org/d3.v4.min.js"></script>
+
+    <script async 
+            src="/theme/scale/animation.min.js?df25c2b9"></script>
+
+  </head>
+
+  <body id="index" class="home"> 
+    <main>
+      <h1>Scalability</h1>
+
+
+
+
+      <div class="slider-container"> 
+        <span class="txn_rate"></span> between transactions
+        <br />
+        <input class="slider" type="range" value="24" min="24" max="350" oninput="manager.debAdjust(this.value);">
+      </div>
+
+      <div class="small-payment-method-maps">
+        <div class="payment-method" id="bitcoin">
+          <div class="payment-label">
+            <img src="/images/scale/Bitcoin.svg" height="35" alt="Bitcoin logo">
+            <h2>Bitcoin</h2> 
+          </div>
+          <div id="btc_anim" class="map"></div>
+          <div class="population-support">
+            <img src="/images/scale/Bitcoin.svg" height="25" alt="Bitcoin logo">
+            <div>
+              Population Support: <span id="btc_anim_pop"></span>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="payment-method" id="ethereum">
+          <div class="payment-label">
+            <img src="/images/scale/ethereum.svg" height="30" alt="Ethereum logo">
+            <h2>Ethereum</h2>
+          </div>
+          <div id="eth_anim" class="map"></div>
+          <div class="population-support">
+            <img src="/images/scale/ethereum.svg" height="25" alt="Ethereum logo">
+            <div>
+              Population Support: <span id="eth_anim_pop"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="payment-method">
+          <div class="payment-label">
+            <img src="/images/scale/Eos.svg" height="30" alt="EOS logo"> 
+            <h2>EOS</h2>
+          </div>
+          <div id="eos_anim" class="map"></div>
+          <div class="population-support">
+            <img src="/images/scale/Eos.svg" height="25" alt="EOS logo">
+            <div>
+              Population Support: <span id="eos_anim_pop"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="payment-method">
+        <div class="payment-label">
+          <img src="/images/scale/visa.svg" height="90" alt="Visa logo">
+          <h2 style="display:none;">Visa</h2>
+        </div>
+        <div id="visa_anim" class="map">
+        </div>
+        <div class="population-support">
+          <img src="/images/scale/visa.svg" height="25" alt="Visa logo">
+          <div>
+            Population Support: <span id="visa_anim_pop"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="payment-method">
+        <div class="payment-label">
+          <img src="/theme/images/logo.svg" height="30" alt="Mercatoria logo">
+          <h2>Mercatoria</h2>
+        </div>
+        <div id="lex_anim" class="map">
+
+        </div>
+        <div class="population-support">
+          <img src="theme/images/logo.svg" height="25" alt="Mercatoria logo">
+          <div>
+            Population Support: <span id="lex_anim_pop"></span>
+          </div>
+        </div>
+
+      </div>
+
+
+    </main>
+  </body>
+</html>

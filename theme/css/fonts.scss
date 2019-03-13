@@ -1,0 +1,77 @@
+/* code font */
+@font-face {
+  font-family: "Monoid";
+  src: local("Monoid"),
+  local("Monoid-Regular"),
+  local("Monoid Regular"),
+  url("../fonts/Monoid-Regular.woff2") format('woff2');
+}
+
+/* font for less important headings */
+@font-face {
+  font-family: "Eurostile";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Eurostile"),
+  url("../fonts/Eurostile.woff2") format('woff2');
+}
+
+/* font for titles and important headings */
+@font-face {
+  font-family: "Eurostile-Ext-Bold";
+  font-style: none;
+  font-weight: 700;
+  src: local("Eurostile-Extended-Bold"),
+  local("Eurostile Extended Bold"),
+  url("../fonts/Eurostile-Extended-Bold.woff2") format('woff2');
+}
+
+/*
+## fonts for main text, IBM Plex Sans Variants
+ */
+
+/* italic */
+@font-face {
+  font-family: "IBM Plex Sans";
+  font-style: italic;
+  font-weight: 400;
+  src: local('IBM Plex Sans Italic'),
+  local('IBMPlexSans-Italic'),
+  url("../fonts/IBMPlexSans-Italic.woff2") format('woff2');
+}
+
+/* bold italic */
+@font-face {
+  font-family: "IBM Plex Sans";
+  font-style: italic;
+  font-weight: 700;
+  src: local('IBM Plex Sans Bold Italic'),
+  local('IBMPlexSans-BoldItalic'),
+  url("../fonts/IBMPlexSans-BoldItalic.woff2") format('woff2');
+}
+
+/* normal */
+@font-face {
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: local('IBM Plex Sans'), 
+  local('IBMPlexSans'),
+  url("../fonts/IBMPlexSans-Regular.woff2") format('woff2');
+}
+
+/* bold */
+@font-face {
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: bold;
+  src: local('IBM Plex Sans Bold'),
+  local('IBMPlexSans-Bold'),
+  url("../fonts/IBMPlexSans-Bold.woff2") format('woff2');
+}
+
+$font_stack: "IBM Plex Sans", sans-serif;
+$font_fancy: "Eurostile", sans-serif;
+$font_title: "Eurostile-Ext-Bold", sans-serif;
+$font_mono: "Monoid", 'Inconsolata', monospace;
+
