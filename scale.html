@@ -56,8 +56,7 @@
       <div class="slider-container"> 
         One transaction every <span class="txn_rate"></span>
         <br />
-        <label for="txn-slider" style="display: none">Time Between Transactions</label>
-        <input class="slider" id="txn-slider" type="range" value="24" min="24" max="350" oninput="manager.debAdjust(this.value);">
+        <input class="slider" aria-label="Time between transactions slider" type="range" value="24" min="24" max="350" oninput="manager.debAdjust(this.value);">
       </div>
 
       <div class="small-payment-method-maps">
