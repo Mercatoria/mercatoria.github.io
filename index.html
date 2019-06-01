@@ -2,8 +2,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css?family=Lekton" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap" rel="stylesheet">
     <link rel="shortcut icon" type="image/png" href="/favicon.png">
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <!-- We felt bad about including analytics scripts but we're afraid of getting hit by traffic we didn't understand -->
@@ -16,16 +15,16 @@
             gtag('config', 'UA-128423492-1');
     </script>
     <meta name="google-site-verification" content="h0IeWQ5uuuYnF1tFoGj4CUR5KNAdmQ1j9OkhHbV_4BE" />
-    <title>Mercatoria</title>
+    <title>ICTP</title>
 
     <style>
       body {
-        font-family: 'Lato', sans-serif;
+        font-family: 'IBM Plex Sans', sans-serif;
       }
 
       a {
         text-decoration: none;
-        color: #18c;
+        color: #397B9D;
       }
 
       .vert-container {
@@ -47,59 +46,43 @@
       }
 
       .header {
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
         margin-bottom: 24px;
-      }
-      @media (max-width: 560px) {
-        .header {
-          display: block;
-          text-align: center;
-        }
+        text-align: center;
       }
 
-      #mercatoria, #coming-soon {
-        font-family: 'Lekton', sans-serif;
-        margin-bottom: 16px;
-      }
-
-      #mercatoria {
+      #title {
+        font-family: 'IBM Plex Sans', sans-serif;
+        font-weight: inherit;
         font-size: 3.5em;
+        margin-bottom: 16px;
         margin-top: 0;
       }
       @media (max-width: 320px) {
-        #mercatoria {
+        #title {
           font-size: 2.5em;
         }
       }
 
-      #contact-email {
-        display: block;
-      }
-      @media (max-width: 560px) {
-        #contact-email {
-          margin-bottom: 24px;
-        }
+      .kalix-attrib {
+        line-height: 50px;
       }
 
-      #logo {
-        width: 100px;
-        height: 100px;
+      .kalix-name {
+        height: 50px;
+        vertical-align: bottom;
       }
 
-      #wei-quote {
-        margin-top: 36px;
-      }
-
-      #wei-attribution {
-        font-style: italic;
-        text-align: right;
-        margin-top: 6px;
-      }
-
-      .center {
+      .call-to-actions {
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
         text-align: center;
+      }
+
+      .call-to-actions > a {
+        margin-top: 1em;
+        min-width: 150px;
+
       }
     </style>
   </head>
@@ -107,31 +90,22 @@
     <div class="vert-container">
       <div class="horiz-container">
         <div class="content">
-          <div class='header'>
+          <div class="header">
             <div>
-              <h1 id="mercatoria">
-                Mercatoria
+              <h1 id="title">
+                ICTP
               </h1>
-              <h2 id="coming-soon">
-                Coming Soon
+              <h2 class="kalix-attrib">
+                by <img src="./kalix-name-logo.png" class="kalix-name">
               </h2>
-              <a href="mailto:contact@mercatoria.io"
-                id="contact-email">
-                contact@mercatoria.io
-              </a>
             </div>
-            <img id="logo" src="./logo.svg">
           </div>
-
-          <div id="wei-quote">
-            <div>
-              "Mercatoria uses pseudorandom assignment and locality of state to
-              achieve arbitrary scalability and true decentralization for its
-              payment processing and smart contracts."
-            </div>
-            <div id="wei-attribution">
-              Wei Dai, cofounder
-            </div>
+          <div class="call-to-actions">
+            <a href="./ictp-whitepaper.pdf" target="_blank">Whitepaper (pdf)</a>
+            <a href="mailto:contact@kalix.io"
+              id="contact-email">
+              contact@kalix.io
+            </a>
           </div>
         </div>
       </div>
